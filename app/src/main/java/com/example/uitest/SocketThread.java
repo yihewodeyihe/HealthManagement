@@ -31,9 +31,9 @@ public class SocketThread extends Thread {
             if(SocketThread.socket.isConnected())
             {
                 //
-                MyTestActivity.handler.obtainMessage(1,0,0,"已连上设备："+SocketThread.device.getName()).sendToTarget();
+                MainActivity.handler.obtainMessage(3,0,0,"已连上设备："+SocketThread.device.getName()).sendToTarget();
                 //获取流
-
+                System.out.println("new String(buffer,0,readLen");
                 is = SocketThread.socket.getInputStream();
                 os = SocketThread.socket.getOutputStream();
                 isOpen = true;
@@ -57,8 +57,12 @@ public class SocketThread extends Thread {
         try {
             while (isOpen) {
                 while ((readLen = is.read(buffer)) != -1) {
+//
                     MainActivity.handler.obtainMessage(1, readLen,
                             0, new String(buffer,0,readLen)).sendToTarget();
+                    System.out.println(readLen);
+
+
                 }
             }
         } catch (Exception e) {
@@ -73,7 +77,7 @@ public class SocketThread extends Thread {
             isOpen=false;
             device=null;
             //
-            MyTestActivity.handler.obtainMessage(2,0,0,"断开连接").sendToTarget();
+            MainActivity.handler.obtainMessage(2,0,0,"断开连接").sendToTarget();
             if(os!=null){
                 try{
                     os.close();

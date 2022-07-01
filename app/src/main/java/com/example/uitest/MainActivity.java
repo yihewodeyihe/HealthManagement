@@ -412,16 +412,16 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         String[] g = AA.split("-");
         ContentValues values = new ContentValues();
         if(g[0]!=null)
-        {System.out.println(g[0]);
-            values.put("BeatRate",Integer.valueOf(g[0]));}
+            System.out.println(g[0]);
+            values.put("BeatRate",Integer.valueOf(g[0]));
         if(g[1]!=null)
             values.put("HighPressure",Integer.valueOf(g[1]));
         if(g[2]!=null)
-            values.put("LowPressure",Integer.valueOf(g[2]));
+            values.put("LowPressure",Integer.valueOf(g[1]));
         if(g[3]!=null)
-            values.put("BloodGlucose",Integer.valueOf(g[3]));
+            values.put("BloodGlucose",Integer.valueOf(g[2]));
         if(g[4]!=null)
-            values.put("BloodOxygen",Integer.valueOf(g[4]));
+            values.put("BloodOxygen",Integer.valueOf(g[3]));
 
         Calendar cal = Calendar.getInstance();
         cal.setTimeZone(TimeZone.getTimeZone("GMT+8:00"));
@@ -439,14 +439,30 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         values.put("CreatTime",year+"-"+month+"-"+day+" "+hour+":"+minute+":"+second);
         db2.insert("BaseDatas",null,values);
     }
-
+    static String readMessage;
+    public static TextView textView3;
     public static Handler handler = new Handler() {
+
 
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case 1:
+
+                    System.out.println(msg.obj);
+//                    byte[] readm =(byte[])msg.obj;
+//                    String readMessage = new String(readm,0, msg.arg1);
+                    System.out.println(msg.obj.toString());
+                    //readMessage=new String((byte[])msg.obj,0, msg.arg1);
+                    //textView3.setText(msg.arg1);
                     ReadCdata(msg.obj.toString());
+                    //MakeScores(db2);
                     break;
+                case 2:
+                    //textView3.setText("断开连接");
+                    break;
+                case 3:
+
+
             }
         }
     };

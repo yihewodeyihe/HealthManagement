@@ -26,7 +26,6 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.*;
 
-@SuppressLint("MissingPermission")
 public class MyTestActivity extends AppCompatActivity {
 
     private BluetoothAdapter bluetoothAdapter;
@@ -40,8 +39,8 @@ public class MyTestActivity extends AppCompatActivity {
     private BluetoothSocket socket;
     private BluetoothDevice device;
     private static TextView textView3;
-
-
+//    public  static DBclass dbsqLiteOpenHelper1 = new DBclass(null,"Ding.db",null,3);
+//    final  static  SQLiteDatabase db = dbsqLiteOpenHelper1.getWritableDatabase();
 
     @SuppressLint("ResourceType")
     @Override
@@ -79,7 +78,6 @@ public class MyTestActivity extends AppCompatActivity {
         listView1.setAdapter(arrayAdapter1);
 
         listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 ensureDiscoverable();
@@ -87,24 +85,34 @@ public class MyTestActivity extends AppCompatActivity {
                 String address = s.substring(s.indexOf(":") + 1).trim();//把地址解析出来
                 //主动连接蓝⽛服务端
                 try {
+
                     //判断当前是否正在搜索
+                    if (ActivityCompat.checkSelfPermission(MyTestActivity.this, Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
+                        // TODO: Consider calling
+                        //    ActivityCompat#requestPermissions
+                        // here to request the missing permissions, and then overriding
+                        //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                        //                                          int[] grantResults)
+                        // to handle the case where the user grants the permission. See the documentation
+                        // for ActivityCompat#requestPermissions for more details.
+                        return;
+                    }
                     if (bluetoothAdapter.isDiscovering()) {
                         bluetoothAdapter.cancelDiscovery();
                     }
                     try {
+
                         //获得远程设备
                         device = bluetoothAdapter.getRemoteDevice(address);
                         try {
                             if(SocketThread.device!=null)
                             {
-                                //判断是否是当前连接的设备
                                 if(device.getAddress().equals(SocketThread.device.getAddress()))
                                 {
                                     return;
                                 }
                                 else
                                 {
-                                    //关socket连接
                                     if(SocketThread.socket!=null)
                                     {
                                         if(SocketThread.socket.isConnected())
@@ -262,14 +270,13 @@ public class MyTestActivity extends AppCompatActivity {
             }
         });
 
-
         if(SocketThread.device!=null)
         {
-            MyTestActivity.handler.obtainMessage(1,0,0,"已连上设备："+SocketThread.device.getName()).sendToTarget();
+            MainActivity.handler.obtainMessage(1,0,0,"已连上设备："+SocketThread.device.getName()).sendToTarget();
         }
         else
         {
-            MyTestActivity.handler.obtainMessage(2,0,0,"断开连接").sendToTarget();
+            MainActivity.handler.obtainMessage(2,0,0,"断开连接").sendToTarget();
         }
 
 
@@ -308,7 +315,19 @@ public class MyTestActivity extends AppCompatActivity {
 
         setContentView(linearLayout);
 
-
+//        new Thread()
+//        {
+//            public void run()
+//            {
+//                while (true)
+//                {
+//                    if(!readMessage.equals(""))
+//                    {ReadCdata(readMessage);
+//                        readMessage="";
+//                    }
+//                }
+//            }
+//        }.start();
 
     }
 
@@ -391,22 +410,27 @@ public class MyTestActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-
-    public static Handler handler = new Handler() {
-        
-        public void handleMessage(Message msg) {
-            switch (msg.what) {
-                case 1:
-                    textView3.setText((String)msg.obj);
-                    break;
-                case 2:
-                    textView3.setText("断开连接");
-                    break;
-
-
-            }
-        }
-    };
+//    static String readMessage;
+//    public static Handler handler = new Handler() {
+//
+//
+//        public void handleMessage(Message msg) {
+//            switch (msg.what) {
+//                case 1:
+//                    //byte[] readm =(byte[])msg.obj;
+////                    String readMessage = new String(readm,0, msg.arg1);
+////                    //readMessage=new String((byte[])msg.obj,0, msg.arg1);
+////                    textView3.setText(msg.arg1);
+////                    System.out.println(msg.arg1);
+//                    break;
+//                case 2:
+//                    textView3.setText("断开连接");
+//                    break;
+//
+//
+//            }
+//        }
+//    };
 
     @SuppressLint("MissingPermission")
     protected void onDestroy() {

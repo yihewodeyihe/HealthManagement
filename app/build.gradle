@@ -18,7 +18,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         python {
             pip {
-                buildPython "D:/python/python.exe"
+                buildPython "D:/LenovoSoftstore/Install/Python_3_8/python.exe"
                 // A requirement specifier, with or without a version number:
                 install "scipy"
                 install "numpy"
