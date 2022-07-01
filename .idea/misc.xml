@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/UITest/app/src/main/res/drawable-v24/ic_blood_pressure.xml" value="0.229" />
+        <entry key="..\:/UITest/app/src/main/res/drawable-v24/ic_default_head.xml" value="0.229" />
+        <entry key="..\:/UITest/app/src/main/res/drawable-v24/ic_menu_news.xml" value="0.229" />
+        <entry key="..\:/UITest/app/src/main/res/drawable-v24/ic_menu_person.xml" value="0.229" />
+        <entry key="..\:/UITest/app/src/main/res/drawable-v24/ic_menu_recipe.xml" value="0.229" />
+        <entry key="..\:/UITest/app/src/main/res/drawable-v24/ic_menu_recipe_tab.xml" value="0.229" />
+        <entry key="..\:/UITest/app/src/main/res/drawable-v24/ic_menu_self.xml" value="0.229" />
+        <entry key="..\:/UITest/app/src/main/res/drawable-v24/ic_menu_self_tab.xml" value="0.229" />
+        <entry key="..\:/UITest/app/src/main/res/drawable-v24/ic_menu_star.xml" value="0.229" />
+        <entry key="..\:/UITest/app/src/main/res/drawable-v24/ic_menu_state.xml" value="0.229" />
+        <entry key="..\:/UITest/app/src/main/res/drawable-v24/ic_menu_state_tab.xml" value="0.229" />
+        <entry key="..\:/UITest/app/src/main/res/drawable/act_matchstickmen.xml" value="0.229" />
+        <entry key="..\:/UITest/app/src/main/res/drawable/bottom_select.xml" value="0.229" />
+        <entry key="..\:/UITest/app/src/main/res/drawable/bottom_unselect.xml" value="0.229" />
+        <entry key="..\:/UITest/app/src/main/res/drawable/ic_baseline_chevron_left_24.xml" value="0.1255" />
+        <entry key="..\:/UITest/app/src/main/res/drawable/ic_blood_glucose.xml" value="0.229" />
+        <entry key="..\:/UITest/app/src/main/res/drawable/ic_blood_oxygen.xml" value="0.229" />
+        <entry key="..\:/UITest/app/src/main/res/drawable/ic_blood_pressure.xml" value="0.229" />
+        <entry key="..\:/UITest/app/src/main/res/drawable/ic_blue_tooth.xml" value="0.229" />
+        <entry key="..\:/UITest/app/src/main/res/drawable/ic_heart_beat.xml" value="0.229" />
+        <entry key="..\:/UITest/app/src/main/res/drawable/item_border.xml" value="0.229" />
+        <entry key="..\:/UITest/app/src/main/res/drawable/left_select.xml" value="0.229" />
+        <entry key="..\:/UITest/app/src/main/res/drawable/right_select.xml" value="0.229" />
+        <entry key="..\:/UITest/app/src/main/res/drawable/self_info.xml" value="0.229" />
+        <entry key="..\:/UITest/app/src/main/res/drawable/self_list_divider_line.xml" value="0.1" />
+        <entry key="..\:/UITest/app/src/main/res/drawable/top_layout_selector.xml" value="0.229" />
+        <entry key="..\:/UITest/app/src/main/res/drawable/top_select.xml" value="0.229" />
+        <entry key="..\:/UITest/app/src/main/res/drawable/top_unselect.xml" value="0.229" />
+        <entry key="..\:/UITest/app/src/main/res/drawable/total_layout_selector.xml" value="0.229" />
+        <entry key="..\:/UITest/app/src/main/res/drawable/total_select.xml" value="0.229" />
+        <entry key="..\:/UITest/app/src/main/res/drawable/total_unselect.xml" value="0.229" />
+        <entry key="..\:/UITest/app/src/main/res/layout/activity_main.xml" value="0.11458333333333333" />
+        <entry key="..\:/UITest/app/src/main/res/layout/array_adapter.xml" value="0.1" />
+        <entry key="..\:/UITest/app/src/main/res/layout/body_state.xml" value="0.25" />
+        <entry key="..\:/UITest/app/src/main/res/layout/fragment_self.xml" value="0.25729166666666664" />
+        <entry key="..\:/UITest/app/src/main/res/layout/recipe_recommended.xml" value="0.11458333333333333" />
+        <entry key="..\:/UITest/app/src/main/res/layout/self_fragment.xml" value="0.4033613316075515" />
+        <entry key="..\:/UITest/app/src/main/res/layout/self_info.xml" value="0.25729166666666664" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
